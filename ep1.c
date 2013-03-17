@@ -49,6 +49,14 @@ int main(int argc, char* argv[])
    for(cont = 0; cont < M; cont++)
    {
       cabPontos = geraPontos(N);
+      if(V == TRUE)
+      {
+         int cont2;
+         Pontos *p;
+         Pontos *pontos = mallocSafe(N*sizeof(*pontos));
+         for(p = cabPontos->prox, cont2 = 0; cont2 < N; cont2++, p = p->prox)
+            pontos[cont2] = *p;
+      }
 
       menor = 1000;
       maiorMenores = -1;
